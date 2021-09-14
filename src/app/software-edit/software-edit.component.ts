@@ -24,7 +24,7 @@ export class SoftwareEditComponent implements OnInit {
   buildForm() {
     this.form = this.formBuilder.group({
       // función que escribes para checar que tu formulario cheque alguna función en específico
-      software: ['', [Validators.required]],
+      sw: ['', [Validators.required]],
       percentage: ['', [Validators.required, Validators.min(1), Validators.max(100)]]
     });
   }
@@ -34,7 +34,7 @@ export class SoftwareEditComponent implements OnInit {
     this.form.markAllAsTouched();
     if(this.form.valid) {
       this.info.software.push({
-        software: this.form.value.software,
+        sw: this.form.value.software,
         percentage: this.form.value.percentage
       });
       if (!this.info.edits) {
@@ -50,7 +50,7 @@ export class SoftwareEditComponent implements OnInit {
 
   deleteSoftware(sw) {
     const index = this.info.software.indexOf(sw);
-    this.info.software.splice(index, 1);
+    this.info.sw.splice(index, 1);
     if (!this.info.edits) {
       this.info.edits = 1;
     } else {

@@ -56,27 +56,27 @@ export class AppComponent implements OnInit{
         ],
         software: [
           {
-            software: 'JavaScript',
+            sw: 'JavaScript',
             percentage: 30
           },
           {
-            software: 'Python',
+            sw: 'Python',
             percentage: 20
           },
           {
-            software: 'HTML',
+            sw: 'HTML',
             percentage: 80
           },
           {
-            software: 'CSS',
+            sw: 'CSS',
             percentage: 80
           },
           {
-            software: 'Angular',
+            sw: 'Angular',
             percentage: 30
           },
           {
-            software: 'Java',
+            sw: 'Java',
             percentage: 30
           }
         ],
