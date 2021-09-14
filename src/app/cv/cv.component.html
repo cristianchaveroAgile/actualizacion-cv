@@ -1,0 +1,155 @@
+<div class="content">
+  <div class="hero-image">
+    <div class="container center-column">
+      <img src="assets/images/fotoperfil.jpg" alt="" class="at-radius-xl profile">
+      <p class="at-prod-h2">{{info.name}} {{info.lastname}}</p>
+      <p class="at-prod-subtitle-1">{{info.position}}</p>
+    </div>
+  </div>
+  <div class="social-media">
+    <a href="{{info.facebook}}" class="facebook at-radius-xl" target="_blank">
+      <img src="assets/images/facebook.svg" alt="">
+    </a>
+    <a href="{{info.linkedin}}" class="linkedin at-radius-xl" target="_blank">
+      <img src="assets/images/linkedin.svg" alt="">
+    </a>
+    <a href="{{info.github}}" class="github at-radius-xl" target="_blank">
+      <img src="assets/images/github.svg" alt="">
+    </a>
+  </div>
+  <div class="row">
+    <div class="col c-6 line">
+      <div class="col-content">
+        <!-- Acerca de mí -->
+        <div class="title">
+          <div class="at-radius-xl icon">
+            <at-icon name="person" [size]="'1.25x'"></at-icon>
+          </div>
+          <p class="at-prod-subtitle-1">Acerca de mí</p>
+        </div>
+        <p class="at-prod-body-1">
+          {{info.description}}
+        </p>
+        <!-- Pasatiempos -->
+        <div class="title">
+          <div class="at-radius-xl icon">
+            <at-icon name="palette" [size]="'1.25x'"></at-icon>
+          </div>
+          <p class="at-prod-subtitle-1">Pasatiempos</p>
+        </div>
+        <div class="tags">
+          <at-tag [rounded]="true" [color]="'tertiary-40'" class="tag" *ngFor="let hobbie of info.hobbies">{{hobbie}}</at-tag>
+        </div>
+        <!-- Idiomas -->
+        <div class="title">
+          <div class="at-radius-xl icon">
+            <at-icon name="translate" [size]="'1.25x'"></at-icon>
+          </div>
+          <p class="at-prod-subtitle-1">Idiomas</p>
+        </div>
+        <div class="meters">
+          <div class="meter" *ngFor="let language of info.languages">
+            <p class="at-prod-body-1">{{language.language}}</p>
+            <meter min="0" max="100" value="{{language.percentage}}"></meter>
+          </div>
+        </div>
+        <!-- Habilidades -->
+        <div class="title">
+          <div class="at-radius-xl icon">
+            <at-icon name="circle-check" [size]="'1.25x'"></at-icon>
+          </div>
+          <p class="at-prod-subtitle-1">Habilidades</p>
+        </div>
+        <div class="meters">
+          <div class="meter" *ngFor="let ability of info.abilities">
+            <p class="at-prod-body-1">{{ability.ability}}</p>
+            <meter min="0" max="100" value="{{ability.percentage}}"></meter>
+          </div>
+        </div>
+        <!-- Lenguajes de programación -->
+        <div class="title">
+          <div class="at-radius-xl icon">
+            <at-icon name="code" [size]="'1.25x'"></at-icon>
+          </div>
+          <p class="at-prod-subtitle-1">Lenguajes de programación</p>
+        </div>
+        <div class="meters">
+          <div class="meter" *ngFor="let software of info.software">
+            <p class="at-prod-body-1">{{software.sw}}</p>
+            <meter min="0" max="100" value="{{software.percentage}}"></meter>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-content">
+        <!-- Experiencia -->
+        <div class="title">
+          <div class="at-radius-xl icon">
+            <at-icon name="briefcase-outline" [size]="'1.25x'"></at-icon>
+          </div>
+          <p class="at-prod-subtitle-1">Experiencia</p>
+        </div>
+        <div class="jobs">
+          <div class="job" *ngFor="let job of info.experience">
+            <p class="at-prod-body-1 bold">{{job.job}}</p>
+            <p class="at-prod-body-1">{{job.company}}</p>
+            <p class="at-prod-body-1">{{job.description}}</p>
+            <p class="at-prod-body-1">{{job.initialDate}} - {{(!job.endDate) ? 'a la fecha' : job.endDate}}</p>
+          </div>
+        </div>
+        <!-- Escolaridad -->
+        <div class="title">
+          <div class="at-radius-xl icon">
+            <at-icon name="book" [size]="'1.25x'"></at-icon>
+          </div>
+          <p class="at-prod-subtitle-1">Escolaridad</p>
+        </div>
+        <div class="schoolarship">
+          <div class="school" *ngFor="let school of info.scholarship">
+            <p class="at-prod-body-1 bold">{{school.school}}</p>
+            <p class="at-prod-body-1">{{school.specialty}}</p>
+            <p class="at-prod-body-1">{{school.initialDate}} - {{school.endDate}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="info.edits; else elseTemplate">
+    <div class="float-button-badge">
+      <at-badge [theme]="'yellow'" [content]="info.edits">
+        <a href="/edit" class="at-radius-xl">
+          <at-icon name="edit" [size]="'1.72x'"></at-icon>
+        </a>
+      </at-badge>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <a href="/edit" class="at-radius-xl float-button">
+      <at-icon name="edit" [size]="'1.72x'"></at-icon>
+    </a>
+  </ng-template>
+  <div class="footer">
+    <div class="row">
+      <div class="col c-4 contact-info">
+        <p class="at-prod-body-1">
+          <at-icon name="local-phone" [size]="'1.25x'"></at-icon>&nbsp;
+          {{info.phone}}
+        </p>
+      </div>
+      <div class="col c-4 contact-info">
+        <p class="at-prod-body-1 center">
+          <at-icon name="email" [size]="'1.25x'"></at-icon>&nbsp;
+          {{info.email}}
+        </p>
+      </div>
+      <div class="col c-4 contact-info">
+        <p class="at-prod-body-1">
+          <at-icon name="location" [size]="'1.25x'"></at-icon>&nbsp;
+          {{info.address}}
+        </p>
+      </div>
+    </div>
+    <p class="at-prod-body-1">Agile Thought 2021</p>
+  </div>
+</div>

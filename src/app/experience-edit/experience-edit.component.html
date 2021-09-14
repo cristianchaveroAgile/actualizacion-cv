@@ -1,0 +1,66 @@
+<div class="container">
+  <p class="at-prod-subtitle-1">Experiencia</p>
+  <div class="at-radius-m at-shadow-md card">
+    <form [formGroup]="form" (ngSubmit)="save($event)">
+      <div class="row">
+        <div class="col c-6">
+          <div class="form-field">
+            <at-form-field [appearance]="'standard'" [theme]="'primary'">
+              <div atLabel class="at-prod-body-1">Puesto</div>
+              <input type="text" atInput formControlName="job" class="at-prod-body-1">
+              <span atSupport class="error" *ngIf="form.get('job').errors && form.get('job').touched">Campo obligatorio</span>
+            </at-form-field>
+          </div>
+        </div>
+        <div class="col c-6">
+          <div class="form-field">
+            <at-form-field [appearance]="'standard'" [theme]="'primary'">
+              <div atLabel class="at-prod-body-1">Empresa</div>
+              <input type="text" atInput formControlName="company" class="at-prod-body-1">
+            </at-form-field>
+          </div>
+        </div>
+        <div class="col c-12">
+          <div class="form-field">
+            <at-form-field [appearance]="'standard'" [theme]="'primary'" class="at-form-field-label-float">
+              <div atLabel class="at-prod-body-1">Descripción</div>
+              <textarea name="" id="" cols="30" rows="3" atInput formControlName="description" class="at-prod-body-1"></textarea>
+              <span atSupport [class]="{'error': form.get('description').errors && form.get('description').touched}">{{form.get('description').errors && form.get('description').touched ? 'Campo obligatorio' : 'Escribe una breve descripción de tus actividades en dicho empleo.'}}</span>
+            </at-form-field>
+          </div>
+        </div>
+        <div class="col c-6">
+          <div class="form-field">
+            <at-form-field [appearance]="'standard'" [theme]="'primary'">
+              <div atLabel class="at-prod-body-1">Fecha de inicio</div>
+              <input type="month" atInput formControlName="initialDate" class="at-prod-body-1">
+              <span atSupport class="error" *ngIf="form.get('initialDate').errors && form.get('initialDate').touched">Campo obligatorio</span>
+            </at-form-field>
+          </div>
+        </div>
+        <div class="col c-6">
+          <div class="form-field">
+            <at-form-field [appearance]="'standard'" [theme]="'primary'">
+              <div atLabel class="at-prod-body-1">Fecha de termino</div>
+              <input type="month" atInput formControlName="endDate" class="at-prod-body-1">
+            </at-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <button type="submit" class="at-btn at-btn-m at-btn-filled-tertiary">Agregar</button>
+      </div>
+    </form>
+    <div class="items">
+      <div class="item" *ngFor="let job of info.experience">
+        <div class="info">
+          <p class="at-prod-body-1 bold">{{job.job}}</p>
+          <p class="at-prod-body-2">{{job.initialDate}} - {{(!job.endDate) ? 'a la fecha' : job.endDate}}</p>
+        </div>
+        <button class="at-btn at-btn-m at-btn-text-red">
+          <at-icon name="circle-cross" [size]="'1.5x'" (click)="deleteJob(job)"></at-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

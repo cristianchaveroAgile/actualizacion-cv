@@ -1,0 +1,42 @@
+
+@import 'at-digital-components/sass/index';
+@import '/src/assets/scss/general';
+
+.content {
+  background-color: $at-primary-40;
+  .center-column {
+    padding: 1rem 0;
+    min-height: 100vh;
+    .logo {
+      width: 18.75rem;
+    }
+    .card-profile {
+      text-align: center;
+      margin-top: 1.25rem;
+      padding: 2rem 1.5rem;
+      background-color: white;
+      max-width: 25rem;
+      .justify {
+        text-align: justify;
+      }
+      .at-btn {
+        margin: 2rem auto;
+      }
+    }
+  }
+}
+// Las media queries (en español "consultas de medios") son útiles cuando deseas modificar tu página web o aplicación en función del tipo de dispositivo (como una impresora o una pantalla) o de características y parámetros específicos (como la resolución de la pantalla o el ancho del viewport del navegador).
+@media screen and (max-width: 767px) {
+  .content {
+    .center-column {
+      .logo {
+        width: 12.5rem;
+      }
+      .card-profile {
+        .at-prod-h2 {
+          font-size: 1.438rem;
+        }
+      }
+    }
+  }
+}

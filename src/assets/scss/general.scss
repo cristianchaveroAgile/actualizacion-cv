@@ -1,0 +1,90 @@
+
+// Sass es un procesador CSS. Un preprocesador CSS es una herramienta que nos permite generar, de manera automática, hojas de estilo, añadiéndoles características que no tiene CSS, y que son propias de los lenguajes de programación, como pueden ser variables, funciones, selectores anidados, herencia, etcétera.
+
+.center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  width: 10.625rem;
+  height: auto;
+}
+
+.social-media {
+  max-width: 25rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: white;
+    &.facebook {
+      background-color: #3B5998;
+    }
+    &.linkedin {
+      background-color: #0E76A8;
+    }
+    &.github {
+      background-color: black;
+    }
+    img {
+      height: 1rem;
+      width: auto;
+    }
+  }
+}
+
+.card {
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 2rem 0;
+  .form-field {
+    padding: 0 0.5rem;
+  }
+  .right {
+    width: max-content;
+    margin-left: auto;
+  }
+
+  .tags {
+    display: flex;
+    margin: 0.5rem 0;
+    flex-wrap: wrap;
+    .tag {
+      margin: 0 0.5rem;
+      display: flex;
+      .at-btn {
+        margin-left: 0.25rem;
+      }
+    }
+  }
+
+  .items {
+    margin: 1.5rem 0;
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: solid 1px $at-primary-40;
+      &:first-child {
+        border-top: solid 1px $at-primary-40;
+      }
+      .info {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+.error {
+  color: $at-red-50;
+}

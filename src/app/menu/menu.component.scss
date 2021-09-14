@@ -1,0 +1,81 @@
+@import 'at-digital-components/sass/index';
+@import '/src/assets/scss/general';
+
+.menu {
+  overflow-y: auto;
+  padding: 3.125rem 1rem;
+  min-height: 100vh;
+  background-color: $at-tertiary-50;
+  width: 16rem;
+  transition: 1s;
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: solid 2px white;
+    .profile {
+      width: 8.8rem;
+      height: 8.8rem;
+    }
+    p {
+      color: white;
+    }
+  }
+  .options {
+    overflow-y: auto;
+    .option {
+      display: flex;
+      align-items: center;
+      padding: 1.4rem 0;
+      text-decoration: none;
+      color: $at-primary-30;
+      border-bottom: solid 1px $at-primary-30;
+      .title {
+        color: currentColor;
+      }
+      &.active, &:hover{
+        color: white;
+        border-bottom: solid 1px white;
+        .title {
+          color: currentColor;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 5rem;
+    padding: 0;
+    .profile-info {
+      display: none;
+    }
+    .options {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
+      height: 5rem;
+      .option {
+        box-sizing: border-box;
+        width: 100%;
+        border-bottom: none;
+        justify-content: center;
+        .title {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width: 768px) and (max-width: 1023px) {
+  .menu {
+    width: 10rem;
+  }
+}

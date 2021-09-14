@@ -1,0 +1,143 @@
+@import 'at-digital-components/sass/index';
+@import '/src/assets/scss/general';
+
+.hero-image {
+  background: url('./../../assets/images/background.png') no-repeat center center/cover;
+  width: 100%;
+  z-index: 0;
+  .container {
+    padding: 2rem 0;
+    text-align: center;
+    p {
+      color: white;
+    }
+  }
+}
+.social-media {
+  z-index: 999;
+  margin-top: -1.125rem;
+}
+
+.line {
+  border-right: solid 1px $at-tertiary-50;
+}
+.col {
+  margin: 1.5rem 0;
+}
+
+.col-content {
+  margin: 1.5rem 0;
+  padding: 0 1.5rem;
+  .title {
+    display: flex;
+    align-items: center;
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.563rem;
+      height: 1.563rem;
+      color: white;
+      background-color: $at-tertiary-50;
+      margin-right: 1rem;
+    }
+  }
+  .tags {
+    display: flex;
+    margin-bottom: 1rem;
+    .tag {
+      margin: 0 0.5rem;
+    }
+  }
+  .meters {
+    .meter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        margin-right: 1rem;
+      }
+      meter {
+        width: 71%;
+        height: 1.5rem;
+        &::-webkit-meter-bar {
+          background: $at-primary-20;
+          border: none;
+        }
+        &::-webkit-meter-optimum-value {
+          background: $at-tertiary-50;
+        }
+      }
+    }
+  }
+  .jobs, .schoolarship {
+    .job:not(:first-child), .school:not(:first-child) {
+      border-top: solid 1px $at-primary-40;
+    }
+  }
+}
+
+.float-button-badge {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  a {
+    background-color: $at-secondary-50;
+    padding: 0.75rem;
+    color: white;
+  }
+}
+
+.float-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: $at-secondary-50;
+  padding: 0.75rem;
+  color: white;
+}
+
+.footer {
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  padding: 0.25rem 1rem;
+  background-color: $at-tertiary-50;
+  p {
+    color: white;
+  }
+  .contact-info {
+    margin: 0;
+    p {
+      box-sizing: border-box;
+      color: white;
+      display: flex;
+      &.center {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .line {
+    border-bottom: solid 1px $at-tertiary-50;
+    border-right: none;
+  }
+  .col-content {
+    .meters {
+      .meter {
+        meter {
+          width: 12.5rem;
+        }
+      }
+    }
+  }
+  .footer {
+    .contact-info {
+      p {
+        justify-content: center;
+      }
+    }
+  }
+}

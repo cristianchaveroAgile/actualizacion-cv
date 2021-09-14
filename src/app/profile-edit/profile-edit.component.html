@@ -1,0 +1,103 @@
+<div class="container">
+  <p class="at-prod-subtitle-1">Acerca de mí</p>
+  <at-alert [size]="'l'" [color]="'secondary'" [title]="'Éxito'" [content]="message" *ngIf="showMessage"></at-alert>
+  <div class="at-radius-m at-shadow-md card">
+    <form [formGroup]="formProfile" (ngSubmit)="saveProfile($event)">
+      <div class="row">
+        <div class="col c-6">
+          <div class="form-field">
+            <at-form-field [appearance]="'standard'" [theme]="'primary'" class="at-form-field-label-float">
+              <div atLabel class="at-prod-body-1">Nombre</div>
+              <input type="text" atInput formControlName="name" class="at-prod-body-1">
+              <span atSupport class="error" *ngIf="formProfile.get('name')?.errors?.required && formProfile.get('name')?.touched">Campo obligatorio</span>
+            </at-form-field>
+          </div>
+        </div>
+        <div class="col c-6">
+          <div class="form-field">
+            <at-form-field [appearance]="'standard'" [theme]="'primary'" class="at-form-field-label-float">
+              <div atLabel class="at-prod-body-1">Apellidos</div>
+              <input type="text" atInput formControlName="lastname" class="at-prod-body-1">
+              <span atSupport class="error" *ngIf="formProfile.get('lastname')?.errors?.required && formProfile.get('lastname')?.touched">Campo obligatorio</span>
+            </at-form-field>
+          </div>
+        </div>
+        <div class="col c-12">
+          <div class="form-field">
+            <at-form-field [appearance]="'standard'" [theme]="'primary'" class="at-form-field-label-float">
+              <div atLabel class="at-prod-body-1">Descripción</div>
+              <textarea name="" id="" cols="30" rows="3" atInput formControlName="description" class="at-prod-body-1"></textarea>
+              <span atSupport [class]="{'error': formProfile.get('description')?.errors?.required && formProfile.get('description')?.touched}">{{formProfile.get('description')?.errors ? 'Campo obligatorio' : 'Escribe una breve descripción tuya y de tus capacidades.'}}</span>
+            </at-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <button type="submit" class="at-btn at-btn-m at-btn-filled-tertiary">Aceptar</button>
+      </div>
+    </form>
+  </div>
+  <div class="at-radius-m at-shadow-md card">
+    <form [formGroup]="formHobbies" (ngSubmit)="saveHobbies($event)">
+      <div class="form-field">
+        <at-form-field [appearance]="'standard'" [theme]="'primary'">
+          <div atLabel class="at-prod-body-1">Pasatiempos</div>
+          <input type="text" atInput formControlName="hobbie" class="at-prod-body-1">
+          <span atSupport class="error" *ngIf="formHobbies.get('hobbie')?.errors?.required && formHobbies.get('hobbie')?.touched">Campo obligatorio</span>
+        </at-form-field>
+      </div>
+      <div class="right">
+        <button type="submit" class="at-btn at-btn-m at-btn-filled-tertiary">Agregar</button>
+      </div>
+    </form>
+    <div class="tags">
+      <div class="tag" *ngFor="let hobbie of info.hobbies">
+        <at-tag [rounded]="true" [color]="'tertiary-40'">{{hobbie}}</at-tag>
+        <button class="at-btn at-btn-s at-btn-text-red" (click)="deleteHobbie(hobbie)">
+          <at-icon name="circle-cross" [size]="'1x'"></at-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="at-radius-m at-shadow-md card">
+    <form [formGroup]="formLanguages" (ngSubmit)="saveLanguages($event)">
+      <div class="row">
+        <div class="col c-6">
+          <div class="form-field">
+            <at-form-field [appearance]="'standard'" [theme]="'primary'">
+              <div atLabel class="at-prod-body-1">Idioma</div>
+              <input type="text" atInput formControlName="language" class="at-prod-body-1">
+              <span atSupport class="error" *ngIf="formLanguages.get('language')?.errors?.required && formLanguages.get('language')?.touched">Campo obligatorio</span>
+            </at-form-field>
+          </div>
+        </div>
+        <div class="col c-6">
+          <div class="form-field">
+            <at-form-field [appearance]="'standard'" [theme]="'primary'">
+              <div atLabel class="at-prod-body-1">Porcentaje</div>
+              <input type="number" atInput formControlName="percentage" class="at-prod-body-1">
+              <span atSuffix class="at-prod-body-1">%</span>
+              <div atSupport class="error" *ngIf="formLanguages.get('percentage')?.errors?.required && formLanguages.get('percentage')?.touched">
+                <!-- permite evaluar de forma condicional una condición que devolverá un resultado booleano (true or false) y dicho resultado se suele utilizar con la finalidad de mostrar u ocultar una información. -->
+                <span *ngIf="formLanguages.get('percentage')?.errors?.required">Campo obligatorio</span>
+                <span *ngIf="formLanguages.get('percentage')?.errors?.min">El valor debe ser mayor a 0</span>
+                <span *ngIf="formLanguages.get('percentage')?.errors?.max">El valor debe ser menor o igual a 100</span>
+              </div>
+            </at-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <button type="submit" class="at-btn at-btn-m at-btn-filled-tertiary">Agregar</button>
+      </div>
+    </form>
+    <div class="tags">
+      <div class="tag" *ngFor="let language of info.languages">
+        <at-tag [rounded]="true" [color]="'tertiary-40'">{{language.language}} - {{language.percentage}}%</at-tag>
+        <button class="at-btn at-btn-s at-btn-text-red" (click)="deleteLanguage(language)">
+          <at-icon name="circle-cross" [size]="'1x'"></at-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

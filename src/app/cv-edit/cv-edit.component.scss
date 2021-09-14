@@ -1,0 +1,39 @@
+.content {
+  display: flex;
+  .menu {
+    order: 0;
+    position: fixed;
+  }
+  .main-content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 2.5rem;
+    margin-left: 18rem;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .content {
+    flex-direction: column;
+    .menu {
+      order: 1;
+      position: fixed;
+    }
+    .main-content {
+      order: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0 1rem;
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+@media screen and(min-width: 768px) and (max-width: 1023px) {
+  .content {
+    .main-content {
+      margin-left: 12rem;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<div class="menu">
+  <div class="profile-info">
+    <img src="assets/images/fotoperfil.jpg" alt="" class="at-radius-xl profile">
+    <p class="at-prod-h4">{{info.name}} {{info.lastname}}</p>
+  </div>
+  <div class="options">
+    <a href="{{option.url}}" class="option" [class]="{'active': setActive(option.url)}" *ngFor="let option of options">
+      <at-icon name="{{option.icon}}" [size]="'2x'"></at-icon> &nbsp;
+      <span class="title at-prod-body-1">
+        {{option.title}}
+      </span>
+    </a>
+  </div>
+</div>

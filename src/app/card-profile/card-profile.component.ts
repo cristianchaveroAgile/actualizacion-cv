@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-card-profile',
+  templateUrl: './card-profile.component.html',
+  styleUrls: ['./card-profile.component.scss']
+})
+export class CardProfileComponent implements OnInit {
+
+  info: any;
+
+  constructor() {
+    this.info = JSON.parse(localStorage.getItem('info'));
+  }
+
+  ngOnInit(): void { }
+
+}
