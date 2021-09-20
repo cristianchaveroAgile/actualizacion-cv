@@ -46,7 +46,7 @@
       <div class="item" *ngFor="let school of info.scholarship">
         <div class="info">
           <p class="at-prod-body-1 bold">{{school.school}}</p>
-          <p class="at-prod-body-2">{{!school.initialDate}} - {{(!school.endDate) ? 'a la fecha' : school.endDate}}</p>
+          <p class="at-prod-body-2">{{school.initialDate}} - {{(!school.endDate) ? 'a la fecha' : school.endDate}}</p>
         </div>
         <button class="at-btn at-btn-m at-btn-text-red">
           <at-icon name="circle-cross" [size]="'1.5x'" (click)="deleteSchool(school)"></at-icon>
