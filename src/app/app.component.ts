@@ -109,6 +109,7 @@ export class AppComponent implements OnInit{
       }
       localStorage.setItem('info', JSON.stringify(info));
 //       El método setItem () establece el valor del elemento de objeto de almacenamiento especificado.
+// convierte un objeto o valor de JavaScript en una cadena de texto JSON
 
 // El método setItem () pertenece al objeto de almacenamiento, que puede ser un objeto localStorage o un objeto sessionStorrage
     }

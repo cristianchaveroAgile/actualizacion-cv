@@ -2,9 +2,13 @@
 // Sass es un procesador CSS. Un preprocesador CSS es una herramienta que nos permite generar, de manera automática, hojas de estilo, añadiéndoles características que no tiene CSS, y que son propias de los lenguajes de programación, como pueden ser variables, funciones, selectores anidados, herencia, etcétera.
 
 .center-column {
+  // el center-clumn es basicamente un flexbox Básicamente la idea de Flexbox es poder alterar el ancho, alto y posicionamiento de elementos de la mejor manera con el espacio del que disponemos.
   display: flex;
+  // transforma la etiqueta de bloque y ordena su posicionamiento
   flex-direction: column;
+  // flex-direction se establece en un container y es como acomo los elementos del contenedor
   justify-content: center;
+  // controlar el alineamiento de los elementos de una caja flexible
   align-items: center;
 }
 
@@ -15,7 +19,9 @@
 
 .social-media {
   max-width: 25rem;
+  // máximo ancho a un elemento
   margin: 0 auto;
+  // establece el margen para los cuatro lados (auto elemento en la posición central)
   display: flex;
   justify-content: space-around;
   a {
@@ -48,6 +54,7 @@
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
+  //La propiedad box-sizing como el user agent (en-US) debe calcular el ancho y alto total de un elemento.
   margin: 2rem 0;
   .form-field {
     padding: 0 0.5rem;
