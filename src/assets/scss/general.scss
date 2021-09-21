@@ -26,11 +26,13 @@
     width: 2.25rem;
     height: 2.25rem;
     color: white;
+
+    // la & se utiliza para las clases hijo en scss y puede heredar
     &.facebook {
       background-color: #3B5998;
     }
     &.linkedin {
-      background-color: $at-primary-40;
+      background-color: #4589FF;
     }
     &.github {
       background-color: black;
