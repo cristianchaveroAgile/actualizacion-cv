@@ -6,14 +6,14 @@
   background-color: $at-primary-40;
   .center-column {
     padding: 1rem 0;
-    min-height: 100vh;
+    min-height: 100vh;//Esta unidad esta basada en el alto de vista de la ventana, El valor de 1vh es equivalente al 1% del del alto del área de visualización.
     .logo {
       width: 18.75rem;
     }
     .card-profile {
-      text-align: center;
-      margin-top: 1.25rem;
-      padding: 2rem 1.5rem;
+      text-align: center; //para dar la alineación del texto del elemento
+      margin-top: 1.25rem; //establece el margen para los cuatro lados, top hace referencia al margen superior
+      padding: 2rem 1.5rem;//establece el espacio de relleno requerido por todos los lados de un elemento
       background-color: white;
       max-width: 25rem;
       .justify {
@@ -31,6 +31,7 @@
     .center-column {
       .logo {
         width: 12.5rem;
+        // 1 rem es igual a 16px
       }
       .card-profile {
         .at-prod-h2 {

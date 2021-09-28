@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
 
 // El método getItem () pertenece al objeto de almacenamiento, que puede ser un objeto localStorage o un objeto sessionStorage
     if (!localStorage.getItem('info')) {
+      //se crea una constante donde se carga los datos.
       const info = {
         name: 'Cristian Amauri',
         lastname: 'Chavero Díaz',
